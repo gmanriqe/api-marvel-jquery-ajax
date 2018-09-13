@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Navegator | Marvel Comics</title>
+</head>
+
+<body>
+
+    <!-- menu navbar-expand-md -->
+    <div class="main__menu">
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="img/logo.png" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <!-- navegacion ml-auto -->
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Service</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- home -->
+    <div class="main_marvel padding_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="section_title">API MARVEL COMIC</h1>
+                </div>
+                <div class="col-md-12">
+                    <form action="" method="POST" autocomplete="off">
+                        <div class="form-group marvel_search">
+                            <input class="form-control input_search" type="text" id="searchMarvel" placeholder="Marvel's Greatest Heroes Sampler (2008) #1">
+                            <i class="fas fa-search" id="btnSearch"></i>
+                        </div>
+                    </form>
+                    <br>
+                    <div class="filter_sort d-flex flex-column-reverse flex-md-row justify-content-between">
+                        <div class="filter" id="filter">
+                            <span id="lenghtResult"></span>|
+                            <p class="filter_more" id="moreFilters"> Más filtros
+                                <span class="filter_triangle"></span>
+                            </p>
+                        </div>
+                        <div class="sort">
+                            <span>Ordenar:</span>
+                            <button type="button" class="btn btn-primary btn_marvel" id="btnSearch">Todos</button>
+                            <button type="button" class="btn btn-primary btn_marvel" id="sortTitle">Titulo</button>
+                            <div class="btn-group" role="group">
+                                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Formato
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                    <a class="dropdown-item" href="#">Comic</a>
+                                    <a class="dropdown-item" href="#">Trade Paperback</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FILTRO -->
+                    <div class="filters" id="containerFilters">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <h3>Tipos</h3>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="Comic" id="comic">
+                                    <label class="form-check-label" for="comic">Comic</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="Trade Paperback" id="trade-paperback">
+                                    <label class="form-check-label" for="trade-paperback">Trade Paperback</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <h3>Otros</h3>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="Digest" id="digest">
+                                    <label class="form-check-label" for="digest">Digest</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="Digital Comic" id="digital-comic">
+                                    <label class="form-check-label" for="digital-comic">Digital Comic</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="container_search">
+                        <div class="row" id="contentTable">
+                            <!-- for -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- menu footer -->
+    <div class="main__menu__footer padding_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h3>About</h3>
+                    <p class="menu__footer__about">Integer posuere erat a ante venenati dapibus posuere velit aliquet.
+                        Fusce
+                        dapibus, tellus cursus commodo, tortor mauris sed posuere.</p>
+                </div>
+                <div class="col-sm-3">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#NoHayEnlace">Web Development</a></li>
+                        <li><a href="#NoHayEnlace">Graphic Design</a></li>
+                        <li><a href="#NoHayEnlace">Web Design</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#NoHayEnlace">Partners</a></li>
+                        <li><a href="#NoHayEnlace">About</a></li>
+                        <li><a href="#NoHayEnlace">FAQ's</a></li>
+                        <li><a href="#NoHayEnlace">Badges</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h3>Suscribe Now</h3>
+                    <div class="footer__suscribe">
+                        <form class="foooter__form" action="">
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Enter Email">
+                            </div>
+                            <div class="form-group">
+                                <button class="form__btn">Suscribe now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="main__footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="footer__copyright">© 2018 GManriqe. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- slick slider -->
+    <script src="js/slick.min.js"></script>
+    <!-- md5 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
+    <!-- js -->
+    <script src="js/app.js"></script>
+
+    <!-- about order -->
+    <script>
+        $(document).ready(function () {
+            $(window).on('load resize', function () {
+                // debugger
+                var aboutEven = $('#containerAbout .row:nth-child(even)');
+                if ($(window).width() >= 768) {
+                    aboutEven
+                        .children().next().addClass('offset-md-1');
+
+                    $.each(aboutEven, function (indexInArray, valueOfElement) {
+                        $(aboutEven[indexInArray])
+                            .children()
+                            .first()
+                            .addClass('order-1')
+                            .removeClass('offset-md-1');
+                    });
+                } else {
+                    // debugger
+                    $.each(aboutEven, function (indexInArray, valueOfElement) {
+                        if ($(aboutEven[indexInArray]).children().first().hasClass('order-1')) {
+                            $(aboutEven[indexInArray])
+                                .children()
+                                .first()
+                                .removeClass('order-1')
+                        }
+                    });
+                }
+            })
+        })
+    </script>
+
+    <!-- filter button -->
+    <script>
+        $(document).ready(function () {
+
+            var btns = $('button.filter').on('click', function () {
+                console.log(this);
+
+                // if ($(this).attr('id') == 'all') {
+                if ($(this).attr('id') == 'all') {
+                    $('#containerBox > div').fadeIn('slow');
+                } else {
+                    var portfolio = $('.' + this.id).fadeIn(1000);
+                    // console.log($('#containerBox > div').not(portfolio).hide());
+                    $('#containerBox > div').not(portfolio).hide()
+                }
+                btns.removeClass('active');
+                $(this).addClass('active');
+
+            })
+        });
+    </script>
+
+    <!-- slick slider -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.your-class').slick({
+                infinity: true,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false,
+                            centerMode: true,
+                            centerPadding: '40px',
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+</body>
+
+</html>
